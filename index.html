@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        img {
+            height: 120px;
+            width: 220px;
+        }
+    </style>
+</head>
+<body>
+    <form action="./index.php" method="POST" enctype="multipart/form-data">
+        <input type="text" name="username">
+        <input type="file" name="photo">
+        <button type="submit">submit</button>
+    </form>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Photos</th>
+        </tr>
+        <?php foreach($fetchData as $getData): ?>
+        <tr>
+                <td><?php echo $getData->name ?></td>
+                <td><img src="<?php echo $getData->image ?>" /></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</body>
+</html>
